@@ -1,6 +1,7 @@
 package com.betteradvancementviewer.mixin;
 
 import com.betteradvancementviewer.MissingCriteriaPanel;
+import com.betteradvancementviewer.PinState;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.advancements.AdvancementWidget;
@@ -14,9 +15,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class AdvancementWidgetMixin {
 	@Shadow private AdvancementProgress progress;
 
-	// Vanilla only calls extractHover on the hovered widget; the last two ints are the screen's leftPos/topPos
 	@Inject(method = "extractHover", at = @At("TAIL"))
 	private void bav$drawMissingCriteria(GuiGraphicsExtractor graphics, int scrollX, int scrollY, float fade, int leftPos, int topPos, CallbackInfo ci) {
-		MissingCriteriaPanel.render(graphics, progress, leftPos, topPos);
+		boolean pinned = (Object) this == PinState.pinned;
+		MissingCriteriaPanel.render(graphics, progress, leftPos, topPos, pinned);
 	}
 }

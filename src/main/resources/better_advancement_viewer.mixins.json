@@ -3,7 +3,10 @@
 	"package": "com.betteradvancementviewer.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"AdvancementWidgetMixin"
+		"AdvancementTabAccessor",
+		"AdvancementTabMixin",
+		"AdvancementWidgetMixin",
+		"AdvancementsScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
