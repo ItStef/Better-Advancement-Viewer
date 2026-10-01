@@ -1,0 +1,16 @@
+{
+	"schemaVersion": 1,
+	"id": "better_advancement_viewer",
+	"version": "${version}",
+	"name": "Better Advancement Viewer",
+	"description": "Hover a multi-part advancement (A Balanced Diet, Adventuring Time, Monsters Hunted, Two by Two...) to see exactly which criteria you're still missing.",
+	"authors": ["stefa"],
+	"license": "MIT",
+	"environment": "client",
+	"mixins": ["better_advancement_viewer.mixins.json"],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25"
+	}
+}

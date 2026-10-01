@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.betteradvancementviewer.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"AdvancementProgressAccessor",
+		"AdvancementTabAccessor",
+		"AdvancementWidgetAccessor",
+		"AdvancementsScreenMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
