@@ -2,10 +2,6 @@ plugins {
 	id 'net.fabricmc.fabric-loom' version "${loom_version}"
 }
 
-base {
-	archivesName = 'better-advancement-viewer'
-}
-
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
@@ -18,13 +14,6 @@ processResources {
 	filesMatching("fabric.mod.json") {
 		expand "version": version
 	}
-}
-
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(25)
-	}
-	withSourcesJar()
 }
 
 tasks.withType(JavaCompile).configureEach {
